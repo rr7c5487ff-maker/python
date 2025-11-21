@@ -65,3 +65,8 @@ def test_volume_down():
     assert "Volume = 0" in str(tv)
     tv.volume_down()
     assert "Volume = 0" in str(tv)
+
+def __str__(self):
+    status = "on" if self._status else "off"
+    muted = " (muted)" if self._muted else ""
+    return f"Power = {status}, Channel = {self._channel}, Volume = {self._volume}{muted}"
