@@ -20,9 +20,9 @@ def test_mute():
     tv.power()
     tv.volume_up()
     tv.mute()
-    assert tv._muted is True
+    assert tv.get_muted() is True
     tv.mute()
-    assert tv._muted is False
+    assert tv.get_muted() is False
 
 def test_channel_up():
     tv = Television()
@@ -65,8 +65,3 @@ def test_volume_down():
     assert "Volume = 0" in str(tv)
     tv.volume_down()
     assert "Volume = 0" in str(tv)
-
-def __str__(self):
-    status = "on" if self._status else "off"
-    muted = " (muted)" if self._muted else ""
-    return f"Power = {status}, Channel = {self._channel}, Volume = {self._volume}{muted}"
