@@ -71,4 +71,5 @@ class Television:
     def __str__(self) -> str:
         """Get a string that shows the TV's current settings."""
         status = "on" if self.__status else "off"
+        muted = " (muted)" if self.__muted else ""
         return f"Power = {status}, Channel = {self.__channel}, Volume = {self.__volume}"
